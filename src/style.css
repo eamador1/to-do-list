@@ -75,6 +75,17 @@ body {
   width: 4%;
 }
 
+.delete {
+  width: 6%;
+  display: none;
+  z-index: 2;
+}
+
+.dots:hover > .delete {
+  display: block;
+  cursor: pointer;
+}
+
 .cont-clear {
   background-color: #fff;
   display: flex;
@@ -121,6 +132,18 @@ body {
   .dots {
     width: 2%;
     margin-left: 10vw;
+    display: none;
+  }
+
+  .delete {
+    width: 4%;
+    margin-left: 10vw ;
+    display: block;
+  }
+
+  .dots:hover > .delete {
+    display: block;
+    cursor: pointer;
   }
 
   .sync {
