@@ -26,7 +26,8 @@ body {
 }
 
 .sync {
-  margin-right: -20vw;
+  margin-right: 3%;
+  width: 4%;
 }
 
 .text {
@@ -55,11 +56,13 @@ body {
 
 .task {
   margin-left: 3vw;
-  width: 40%;
+  width: 80%;
+  height: 1%;
 }
 
 .dots {
-  margin-left: 40vw;
+  margin-left: 5vw;
+  width: 4%;
 }
 
 .cont-clear {
@@ -101,7 +104,13 @@ body {
     width: 56vw;
   }
 
+  .dots {
+    width: 2%;
+    margin-left: 10vw;
+  }
+
   .sync {
     margin-right: 0;
+    width: 2%;
   }
 }
