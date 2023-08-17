@@ -1,16 +1,17 @@
 import './style.css';
 import dotsImage from './img/dots.png';
 import syncImage from './img/synchronize.png';
+import enterImage from './img/enter.png';
 
 const list = [
   {
     description: 'Take a shower',
-    completed: '0',
+    completed: 'false',
     index: '1',
   },
   {
     description: 'Breakfast',
-    completed: '1',
+    completed: 'salse',
     index: '2',
   },
 ];
@@ -39,6 +40,7 @@ class Goals {
       $dots.src = dotsImage;
       $dots.alt = 'dots image';
       document.querySelector('.sync').src = syncImage;
+      document.querySelector('.enter').src = enterImage;
 
       $cont.appendChild($checkbox);
       $cont.appendChild($task);

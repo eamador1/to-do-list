@@ -30,13 +30,23 @@ body {
   width: 4%;
 }
 
+.input {
+  display: flex;
+  justify-content: space-between;
+}
+
 .text {
   border-top: none;
   border-left: none;
   border-right: none;
   padding: 1vh 1vw 1vh 1vw;
   border-bottom: 1px solid #d9dde2;
-  width: 86vw;
+  width: 83vw;
+}
+
+.enter {
+  width: 2%;
+  margin-left: -15vw;
 }
 
 .list {
@@ -98,6 +108,10 @@ body {
   .cont-task,
   .activities h5 {
     width: 56vw;
+  }
+
+  .enter {
+    margin-left: -4vw;
   }
 
   .cont-heading {
