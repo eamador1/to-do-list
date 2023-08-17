@@ -115,7 +115,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## 👤 Collaboration:
 
-Thank you M. Alvee for your colaboration in this project.
+Thank you M. Alvee for your collaboration in this project.
 
 - GitHub: [@0xMALVEE](https://github.com/0xMALVEE)
 
