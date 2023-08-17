@@ -1,4 +1,6 @@
 import './style.css';
+import dotsImage from './img/dots.png';
+import syncImage from './img/synchronize.png';
 
 const list = [
   {
@@ -34,8 +36,9 @@ class Goals {
       $dots.classList.add('dots');
 
       $task.textContent = item.description;
-      $dots.src = 'src/img/dots.png';
+      $dots.src = dotsImage;
       $dots.alt = 'dots image';
+      document.querySelector('.sync').src = syncImage;
 
       $cont.appendChild($checkbox);
       $cont.appendChild($task);
