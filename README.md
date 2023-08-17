@@ -18,7 +18,7 @@
 - [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
-# 📖 Awesome books <a name="about-project"></a>
+# 📖 TO DO LIST <a name="about-project"></a>
 
 In this project, I built a simple HTML list of To Do tasks. The list was styled according to the specifications provided. This simple web page is built using webpack and served by a webpack dev server.
 
@@ -88,7 +88,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd [my-folder]
-  git clone git@github.com:eamador1/awesome-library.git
+  git clone git@github.com:eamador1/to-do-list.git
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -109,13 +109,17 @@ Clone this repository to your desired folder:
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-## 👤 Collaboration:
-
-Special thaks to Damian Div Bustros who was my coding partner for Awesome Books Project:
-
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
+
+## 👤 Collaboration:
+
+Thank you M. Alvee for your colaboration in this project.
+
+- GitHub: [@0xMALVEE](https://github.com/0xMALVEE)
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
