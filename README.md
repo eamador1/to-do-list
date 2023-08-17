@@ -65,7 +65,7 @@ In this project, I built a simple HTML list of To Do tasks. The list was styled 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link](https://eamador-to-do-list.netlify.app)
-  https://eamador-to-do-list.netlify.app
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
