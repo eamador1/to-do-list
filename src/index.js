@@ -157,20 +157,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  $list.addEventListener('click', (event) => {
-  const $task = event.target.closest('.task');
-  if ($task) {
-    const taskIndex = Array.from($list.children).indexOf($task.closest('.cont-task'));
-    const newDescription = $task.value;
-    console.log(newDescription);
-    
-    if (newDescription !== myList.items[taskIndex].description) {
-      myList.items[taskIndex].description = newDescription;
-      console.log(newDescription);
-      myList.updateLocalStorage();
+  
+  $list.addEventListener('blur', (event) => {
+    const $task = event.target.closest('.task');
+    if ($task) {
+      const taskIndex = Array.from($list.children).indexOf($task.closest('.cont-task'));
+      const newDescription = $task.value.trim(); // Trim to remove leading/trailing spaces
+  
+      if (newDescription !== myList.items[taskIndex].description) {
+        myList.items[taskIndex].description = newDescription;
+        myList.updateLocalStorage();
+      }
     }
-  }
-});
+  }, true); // Use the capture phase to ensure that blur events are captured on all child elements
+
+  $list.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+      const $task = event.target.closest('.task');
+      if ($task) {
+        const taskIndex = Array.from($list.children).indexOf($task.closest('.cont-task'));
+        const newDescription = $task.value;
+        console.log(newDescription);
+        
+        if (newDescription !== myList.items[taskIndex].description) {
+          myList.items[taskIndex].description = newDescription;
+          console.log(newDescription);
+          myList.updateLocalStorage();
+        }
+      }
+    }
+  });
+  
+
+
+
+
+
 
 $list.addEventListener('click', (event) => {
   const $checkbox = event.target.closest('.completed');
