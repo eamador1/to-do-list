@@ -50,7 +50,7 @@ class Goals {
       const $cont = document.createElement('div');
       const $checkbox = document.createElement('input');
       $checkbox.type = 'checkbox';
-      const $task = document.createElement('span');
+      const $task = document.createElement('input');
       const $dots = document.createElement('img');
       const $delete = document.createElement('img');
 
@@ -59,8 +59,9 @@ class Goals {
       $task.classList.add('task');
       $dots.classList.add('dots');
       $delete.classList.add('delete');
-
-      $task.textContent = item.description;
+    
+      $task.type ='text';
+      $task.value = item.description;
       $dots.src = dotsImage;
       $dots.alt = 'dots image';
       $delete.src = deleteImage;
@@ -154,4 +155,17 @@ document.addEventListener('DOMContentLoaded', () => {
       $delete.classList.remove('active');
     }
   });
+
+  $list.addEventListener('click', (event) => {
+  const $task = event.target.closest('.task');
+  if ($task) {
+    const taskIndex = Array.from($list.children).indexOf($task.closest('.cont-task'));
+    const newDescription = $task.value;
+    
+    if (newDescription !== myList.items[taskIndex].description) {
+      myList.items[taskIndex].description = newDescription;
+      myList.updateLocalStorage();
+    }
+  }
+});
 });
