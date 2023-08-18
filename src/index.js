@@ -8,12 +8,12 @@ const list = [
   {
     description: 'Take a shower',
     completed: 'false',
-    index: 1,
+    index: '1',
   },
   {
     description: 'Breakfast',
-    completed: 'salse',
-    index: 2,
+    completed: 'false',
+    index: '2',
   },
 ];
 class Goals {
@@ -30,6 +30,10 @@ class Goals {
 
   deleteTask(index) {
     this.items.splice(index, 1);
+
+    for (let i = index; i < this.items.length; i++) {
+      this.items[i].index = (parseInt(this.items[i].index, 10) - 1).toString();
+    }
     this.updateLocalStorage();
     this.displayList();
   }
@@ -99,5 +103,15 @@ document.addEventListener('DOMContentLoaded', () => {
       emptyMainInputText();
     }
   })
+
+  const $list = document.querySelector('.list');
+  $list.addEventListener('click', (event) => {
+    const $deleteButton = event.target.closest('.delete');
+    if ($deleteButton) {
+      const taskIndex = Array.from($list.children).indexOf($deleteButton.closest('.cont-task'));
+      myList.deleteTask(taskIndex);
+    }
+  });
+  
 });
 
