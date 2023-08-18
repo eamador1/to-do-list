@@ -89,10 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function addItemToList() {
     const $captureTask = document.querySelector('.text');
-    const $captureId = (list.length + 1).toString;
+    const $captureId = (myList.items.length + 1);
     const $captureCompleted = false;
 
-    myList.addtask($captureTask.value, $captureCompleted, $captureId.valueOf());
+    myList.addtask($captureTask.value, $captureCompleted, $captureId.toString());
     emptyMainInputText();
   }
 
@@ -161,9 +161,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if ($task) {
     const taskIndex = Array.from($list.children).indexOf($task.closest('.cont-task'));
     const newDescription = $task.value;
+    console.log(newDescription);
     
     if (newDescription !== myList.items[taskIndex].description) {
       myList.items[taskIndex].description = newDescription;
+      console.log(newDescription);
       myList.updateLocalStorage();
     }
   }
