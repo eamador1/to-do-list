@@ -68,6 +68,7 @@ body {
   margin-left: 1vw;
   width: 80%;
   height: 1%;
+  border: none;
 }
 
 .dots {
@@ -78,6 +79,7 @@ body {
 .delete {
   width: 6%;
   display: none;
+  margin-left: 4vw;
 }
 
 .active {
