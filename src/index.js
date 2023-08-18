@@ -4,18 +4,7 @@ import syncImage from './img/synchronize.png';
 import enterImage from './img/enter.png';
 import deleteImage from './img/delete.png';
 
-const list = [
-  {
-    description: 'Take a shower',
-    completed: 'false',
-    index: '1',
-  },
-  {
-    description: 'Breakfast',
-    completed: 'false',
-    index: '2',
-  },
-];
+const list = [];
 class Goals {
   constructor() {
     this.items = JSON.parse(localStorage.getItem('list')) || list;
