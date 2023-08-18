@@ -59,9 +59,9 @@ class Goals {
       $task.classList.add('task');
       $dots.classList.add('dots');
       $delete.classList.add('delete');
-    
+
       $checkbox.checked = item.completed;
-      $task.type ='text';
+      $task.type = 'text';
       $task.value = item.description;
       $dots.src = dotsImage;
       $dots.alt = 'dots image';
@@ -157,13 +157,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  
   $list.addEventListener('blur', (event) => {
     const $task = event.target.closest('.task');
     if ($task) {
       const taskIndex = Array.from($list.children).indexOf($task.closest('.cont-task'));
       const newDescription = $task.value.trim(); // Trim to remove leading/trailing spaces
-  
+
       if (newDescription !== myList.items[taskIndex].description) {
         myList.items[taskIndex].description = newDescription;
         myList.updateLocalStorage();
@@ -177,39 +176,29 @@ document.addEventListener('DOMContentLoaded', () => {
       if ($task) {
         const taskIndex = Array.from($list.children).indexOf($task.closest('.cont-task'));
         const newDescription = $task.value;
-        console.log(newDescription);
-        
+
         if (newDescription !== myList.items[taskIndex].description) {
           myList.items[taskIndex].description = newDescription;
-          console.log(newDescription);
           myList.updateLocalStorage();
         }
       }
     }
   });
-  
 
+  $list.addEventListener('click', (event) => {
+    const $checkbox = event.target.closest('.completed');
+    if ($checkbox) {
+      const taskIndex = Array.from($list.children).indexOf($checkbox.closest('.cont-task'));
 
-
-
-
-
-$list.addEventListener('click', (event) => {
-  const $checkbox = event.target.closest('.completed');
-  if ($checkbox) {
-    const taskIndex = Array.from($list.children).indexOf($checkbox.closest('.cont-task'));
-
-    if (!myList.items[taskIndex].completed) { // Only update if not already completed
-      myList.items[taskIndex].completed = true;
-      myList.updateLocalStorage();
-      myList.displayList(); // Refresh the displayed list to reflect the changes
+      if (!myList.items[taskIndex].completed) { // Only update if not already completed
+        myList.items[taskIndex].completed = true;
+        myList.updateLocalStorage();
+        myList.displayList(); // Refresh the displayed list to reflect the changes
+      } else if (myList.items[taskIndex].completed) {
+        myList.items[taskIndex].completed = false;
+        myList.updateLocalStorage();
+        myList.displayList();
+      }
     }
-
-    else if (myList.items[taskIndex].completed) {
-      myList.items[taskIndex].completed = false;
-      myList.updateLocalStorage();
-      myList.displayList();
-    }
-  }
-});
+  });
 });
