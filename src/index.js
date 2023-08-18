@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function addItemToList() {
     const $captureTask = document.querySelector('.text');
-    const $captureId = list.length + 1;
+    const $captureId = (list.length + 1).toString;
     const $captureCompleted = false;
     
     myList.addtask($captureTask.value, $captureCompleted, $captureId.valueOf());
@@ -102,16 +102,59 @@ document.addEventListener('DOMContentLoaded', () => {
       addItemToList();
       emptyMainInputText();
     }
-  })
+  });
 
   const $list = document.querySelector('.list');
   $list.addEventListener('click', (event) => {
-    const $deleteButton = event.target.closest('.delete');
-    if ($deleteButton) {
-      const taskIndex = Array.from($list.children).indexOf($deleteButton.closest('.cont-task'));
+    const $delete = event.target.closest('.delete');
+    if ($delete) {
+      const taskIndex = Array.from($list.children).indexOf($delete.closest('.cont-task'));
       myList.deleteTask(taskIndex);
     }
   });
-  
+
+  $list.addEventListener('mouseover', (event) => {
+    const $task = event.target.closest('.task');
+    if ($task) {
+      const $cont = $task.closest('.cont-task');
+      const $dots = $cont.querySelector('.dots');
+      const $delete = $cont.querySelector('.delete');
+      $dots.classList.add ('inactive');
+      $delete.classList.add('active');
+    }
 });
 
+  $list.addEventListener('mouseout', (event) => {
+    const $task = event.target.closest('.task');
+    if ($task) {
+      const $cont = $task.closest('.cont-task');
+      const $dots = $cont.querySelector('.dots');
+      const $delete = $cont.querySelector('.delete');
+      $dots.classList.remove('inactive');
+      $delete.classList.remove('active');
+  }
+});
+
+$list.addEventListener('mouseover', (event) => {
+  const $dots = event.target.closest('.dots');
+  if ($dots) {
+    const $cont = $dots.closest('.cont-task');
+    const $delete = $cont.querySelector('.delete');
+    $dots.classList.add('inactive');
+    $delete.classList.add('active');
+  }
+});
+
+$list.addEventListener('mouseout', (event) => {
+  const $dots = event.target.closest('.dots');
+  if ($dots) {
+    const $cont = $dots.closest('.cont-task');
+    const $delete = $cont.querySelector('.delete');
+    $dots.classList.remove('inactive');
+    $delete.classList.remove('active');
+  }
+});
+
+  
+});
+  

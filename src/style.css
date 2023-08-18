@@ -78,7 +78,14 @@ body {
 .delete {
   width: 6%;
   display: none;
-  z-index: 2;
+}
+
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
 }
 
 .dots:hover > .delete {
@@ -136,14 +143,17 @@ body {
   }
 
   .delete {
-    width: 4%;
+    width: 2.3%;
     margin-left: 12vw ;
     display: none;
   }
 
-  .dots:hover > .delete {
+  .active {
     display: block;
-    cursor: pointer;
+  }
+  
+  .inactive {
+    display: none;
   }
 
   .sync {
