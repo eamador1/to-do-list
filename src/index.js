@@ -31,7 +31,7 @@ class Goals {
   deleteTask(index) {
     this.items.splice(index, 1);
 
-    for (let i = index; i < this.items.length; i++) {
+    for (let i = index; i < this.items.length; i += 1) {
       this.items[i].index = (parseInt(this.items[i].index, 10) - 1).toString();
     }
     this.updateLocalStorage();
@@ -39,7 +39,7 @@ class Goals {
   }
 
   updateLocalStorage() {
-    localStorage.setItem('list', JSON.stringify(this.items)); 
+    localStorage.setItem('list', JSON.stringify(this.items));
   }
 
   displayList() {
@@ -64,7 +64,7 @@ class Goals {
       $dots.src = dotsImage;
       $dots.alt = 'dots image';
       $delete.src = deleteImage;
-      $delete.alt = 'trash image'
+      $delete.alt = 'trash image';
       document.querySelector('.sync').src = syncImage;
       document.querySelector('.enter').src = enterImage;
 
@@ -90,13 +90,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const $captureTask = document.querySelector('.text');
     const $captureId = (list.length + 1).toString;
     const $captureCompleted = false;
-    
+
     myList.addtask($captureTask.value, $captureCompleted, $captureId.valueOf());
     emptyMainInputText();
   }
 
   const $mainText = document.querySelector('.text');
-  $mainText.addEventListener('keypress', function (e) {
+  $mainText.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
       addItemToList();
@@ -119,10 +119,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const $cont = $task.closest('.cont-task');
       const $dots = $cont.querySelector('.dots');
       const $delete = $cont.querySelector('.delete');
-      $dots.classList.add ('inactive');
+      $dots.classList.add('inactive');
       $delete.classList.add('active');
     }
-});
+  });
 
   $list.addEventListener('mouseout', (event) => {
     const $task = event.target.closest('.task');
@@ -132,29 +132,26 @@ document.addEventListener('DOMContentLoaded', () => {
       const $delete = $cont.querySelector('.delete');
       $dots.classList.remove('inactive');
       $delete.classList.remove('active');
-  }
-});
+    }
+  });
 
-$list.addEventListener('mouseover', (event) => {
-  const $dots = event.target.closest('.dots');
-  if ($dots) {
-    const $cont = $dots.closest('.cont-task');
-    const $delete = $cont.querySelector('.delete');
-    $dots.classList.add('inactive');
-    $delete.classList.add('active');
-  }
-});
+  $list.addEventListener('mouseover', (event) => {
+    const $dots = event.target.closest('.dots');
+    if ($dots) {
+      const $cont = $dots.closest('.cont-task');
+      const $delete = $cont.querySelector('.delete');
+      $dots.classList.add('inactive');
+      $delete.classList.add('active');
+    }
+  });
 
-$list.addEventListener('mouseout', (event) => {
-  const $dots = event.target.closest('.dots');
-  if ($dots) {
-    const $cont = $dots.closest('.cont-task');
-    const $delete = $cont.querySelector('.delete');
-    $dots.classList.remove('inactive');
-    $delete.classList.remove('active');
-  }
+  $list.addEventListener('mouseout', (event) => {
+    const $dots = event.target.closest('.dots');
+    if ($dots) {
+      const $cont = $dots.closest('.cont-task');
+      const $delete = $cont.querySelector('.delete');
+      $dots.classList.remove('inactive');
+      $delete.classList.remove('active');
+    }
+  });
 });
-
-  
-});
-  
