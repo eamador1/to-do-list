@@ -71,6 +71,10 @@ body {
   border: none;
 }
 
+.done {
+  text-decoration: line-through;
+}
+
 .dots {
   margin-left: 5vw;
   width: 4%;
