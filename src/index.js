@@ -1,5 +1,6 @@
 import './style.css';
 import Goals from './goalClass.js';
+import updateCheckbox from './eventStatus';
 
 document.addEventListener('DOMContentLoaded', () => {
   const myList = new Goals();
@@ -107,20 +108,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  $list.addEventListener('click', (event) => {
-    const $checkbox = event.target.closest('.completed');
-    if ($checkbox) {
-      const taskIndex = Array.from($list.children).indexOf($checkbox.closest('.cont-task'));
-
-      if (!myList.items[taskIndex].completed) { // Only update if not already completed
-        myList.items[taskIndex].completed = true;
-        myList.updateLocalStorage();
-        myList.displayList(); // Refresh the displayed list to reflect the changes
-      } else if (myList.items[taskIndex].completed) {
-        myList.items[taskIndex].completed = false;
-        myList.updateLocalStorage();
-        myList.displayList();
-      }
-    }
-  });
+  
 });

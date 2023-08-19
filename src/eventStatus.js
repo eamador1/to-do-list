@@ -1,9 +1,18 @@
-
 import Goals from './goalClass.js';
-   
+
 const $list = document.querySelector('.list');
    const updateCheckbox = (myList) => {
+    myList = new Goals();
+    
+    myList.items.forEach((task, index) => {
+        if (task.completed) {
+          const $task = $list.children[index].querySelector('.task');
+          $task.classList.add('done');
+        }
+      });
+
     $list.addEventListener('click', (event) => {
+
       const $checkbox = event.target.closest('.completed');
       if ($checkbox) {
         const taskIndex = Array.from($list.children).indexOf($checkbox.closest('.cont-task'));
@@ -35,10 +44,6 @@ $clearButton.addEventListener('click', () => {
   myList.displayList(); // Refresh the displayed list
 }); 
 }
-
-
-
-
 
 export default updateCheckbox;
 
