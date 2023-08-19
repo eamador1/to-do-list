@@ -1,6 +1,5 @@
 import './style.css';
 import Goals from './goalClass.js';
-import updateCheckbox from './eventStatus';
 
 document.addEventListener('DOMContentLoaded', () => {
   const myList = new Goals();
