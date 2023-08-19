@@ -1,6 +1,9 @@
 import './style.css';
 import Goals from './goalClass.js';
 import updateCheckbox from './eventStatus.js';
+import syncImage from './img/synchronize.png';
+import enterImage from './img/enter.png';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const myList = new Goals();
@@ -108,4 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   updateCheckbox(myList);
+  document.querySelector('.sync').src = syncImage;
+  document.querySelector('.enter').src = enterImage;
 });
