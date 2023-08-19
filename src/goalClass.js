@@ -68,3 +68,4 @@ class Goals {
     });
   }
 }
+export default Goals
