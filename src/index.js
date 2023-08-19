@@ -107,6 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
-
-  
+  updateCheckbox(myList)
 });
+
