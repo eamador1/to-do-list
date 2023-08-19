@@ -1,6 +1,6 @@
 import './style.css';
 import Goals from './goalClass.js';
-import updateCheckbox from './eventStatus';
+import updateCheckbox from './eventStatus.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const myList = new Goals();
@@ -107,6 +107,5 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
-  updateCheckbox(myList)
+  updateCheckbox(myList);
 });
-

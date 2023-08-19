@@ -9,10 +9,14 @@ body {
 
 .cont-heading {
   display: flex;
-  justify-content: space-between;
   border-bottom: 1px solid #d9dde2;
   padding: 1vh 1vw 1vh 1vw;
   width: 95%;
+}
+
+.activities .cont-heading h5 {
+  width: 80%;
+  margin-right: 0;
 }
 
 .activities {
@@ -26,7 +30,7 @@ body {
 }
 
 .sync {
-  margin-right: 3%;
+  margin-left: 18%;
   width: 4%;
 }
 
@@ -41,7 +45,7 @@ body {
   border-right: none;
   padding: 1vh 1vw 1vh 1vw;
   border-bottom: 1px solid #d9dde2;
-  width: 83vw;
+  width: 75vw;
 }
 
 .enter {
