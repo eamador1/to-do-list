@@ -3,6 +3,7 @@ import dotsImage from './img/dots.png';
 import syncImage from './img/synchronize.png';
 import enterImage from './img/enter.png';
 import deleteImage from './img/delete.png';
+import updateCheckbox from './eventStatus.js'
 
 const list = [];
 
@@ -49,7 +50,6 @@ class Goals {
       $task.classList.add('task');
       $dots.classList.add('dots');
       $delete.classList.add('delete');
-
       $checkbox.checked = item.completed;
       $task.type = 'text';
       $task.value = item.description;
