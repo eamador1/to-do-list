@@ -3,6 +3,7 @@ import dotsImage from './img/dots.png';
 import syncImage from './img/synchronize.png';
 import enterImage from './img/enter.png';
 import deleteImage from './img/delete.png';
+import updateCheckbox from './eventStatus';
 
 const list = [];
 
@@ -67,5 +68,3 @@ class Goals {
     });
   }
 }
-
-export default Goals;
