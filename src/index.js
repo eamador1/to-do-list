@@ -1,5 +1,6 @@
 import './style.css';
 import Goals from './goalClass.js';
+import DeleteCompletedTasks from './updateTasks.js';
 import updateCheckbox from './eventStatus.js';
 import syncImage from './img/synchronize.png';
 import enterImage from './img/enter.png';
@@ -110,6 +111,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+  const $clearButton = document.querySelector('.clear');
+  $clearButton.addEventListener('click', () => {
+    DeleteCompletedTasks(myList);
+  });
+
   updateCheckbox(myList);
   document.querySelector('.sync').src = syncImage;
   document.querySelector('.enter').src = enterImage;
