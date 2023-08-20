@@ -1,23 +1,16 @@
-import Goals from './goalClass.js';
-
 const DeleteCompletedTasks = (myList) => {
-  myList = new Goals();
-
-  // Filter out completed tasks and update the adjustment value
   const incompleteTasks = myList.items.filter((task) => {
     if (task.completed) {
-      return false; // Exclude completed task from new array
+      return false;
     }
-    return true; // Include incomplete task in new array
+    return true;
   });
 
-  // Update the index values for remaining tasks
   incompleteTasks.forEach((task, index) => {
-    task.index = (index + 1).toString(); // Update the index
+    task.index = (index + 1).toString();
   });
 
-  myList.items = incompleteTasks; // Update the list with incomplete tasks
-
+  myList.items = incompleteTasks;
   myList.updateLocalStorage();
   myList.displayList();
 };

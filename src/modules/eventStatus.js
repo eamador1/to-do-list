@@ -1,9 +1,5 @@
-import Goals from './goalClass.js';
-
 const $list = document.querySelector('.list');
 const updateCheckbox = (myList) => {
-  myList = new Goals();
-
   $list.addEventListener('click', (event) => {
     const $checkbox = event.target.closest('.completed');
     if ($checkbox) {
@@ -14,16 +10,6 @@ const updateCheckbox = (myList) => {
 
       myList.updateLocalStorage();
       myList.displayList(); // Refresh the displayed list to reflect the changes
-
-      // Iterate through all tasks and update the "done" class based on their completed status
-      const $tasks = document.querySelectorAll('.task');
-      $tasks.forEach(($task, index) => {
-        if (myList.items[index].completed) {
-          $task.classList.add('done');
-        } else {
-          $task.classList.remove('done');
-        }
-      });
     }
   });
 };
