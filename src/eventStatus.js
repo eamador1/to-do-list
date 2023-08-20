@@ -33,14 +33,8 @@ const updateCheckbox = (myList) => {
       });
     }
   });
-
-  // Clear all
-  const $clearButton = document.querySelector('.clear');
-  $clearButton.addEventListener('click', () => {
-    myList.items = []; // Clear all items
-    myList.updateLocalStorage();
-    myList.displayList(); // Refresh the displayed list
-  });
 };
 
+
 export default updateCheckbox;
+
