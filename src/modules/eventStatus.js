@@ -4,13 +4,6 @@ const $list = document.querySelector('.list');
 const updateCheckbox = (myList) => {
   myList = new Goals();
 
-  /* myList.items.forEach((task, index) => {
-    if (task.completed) {
-      const $task = $list.children[index].querySelector('.task');
-      $task.classList.add('done');
-    }
-  }); */
-
   $list.addEventListener('click', (event) => {
     const $checkbox = event.target.closest('.completed');
     if ($checkbox) {

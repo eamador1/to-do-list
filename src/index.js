@@ -1,7 +1,7 @@
 import './style.css';
-import Goals from './goalClass.js';
-import DeleteCompletedTasks from './updateTasks.js';
-import updateCheckbox from './eventStatus.js';
+import Goals from './modules/goalClass.js';
+import DeleteCompletedTasks from './modules/updateTasks.js';
+import updateCheckbox from './modules/eventStatus.js';
 import syncImage from './img/synchronize.png';
 import enterImage from './img/enter.png';
 

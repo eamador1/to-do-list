@@ -1,8 +1,7 @@
-import './style.css';
-import dotsImage from './img/dots.png';
-import syncImage from './img/synchronize.png';
-import enterImage from './img/enter.png';
-import deleteImage from './img/delete.png';
+import dotsImage from '../img/dots.png';
+import syncImage from '../img/synchronize.png';
+import enterImage from '../img/enter.png';
+import deleteImage from '../img/delete.png';
 
 const list = [];
 
@@ -27,12 +26,6 @@ class Goals {
     this.updateLocalStorage();
     this.displayList();
   }
-
-  updateLocalStorage() {
-    localStorage.setItem('list', JSON.stringify(this.items));
-     location.reload();// eslint-disable-line
-  }
-
   displayList() {
     const $list = document.querySelector('.list');
     $list.innerHTML = '';
@@ -67,5 +60,11 @@ class Goals {
       $list.appendChild($cont);
     });
   }
+  updateLocalStorage() {
+    localStorage.setItem('list', JSON.stringify(this.items));
+    this.displayList();
+  }
+
+ 
 }
 export default Goals;
