@@ -5,7 +5,6 @@ import updateCheckbox from './eventStatus.js';
 import syncImage from './img/synchronize.png';
 import enterImage from './img/enter.png';
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const myList = new Goals();
   myList.displayList();

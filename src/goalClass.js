@@ -30,6 +30,7 @@ class Goals {
 
   updateLocalStorage() {
     localStorage.setItem('list', JSON.stringify(this.items));
+     location.reload();// eslint-disable-line
   }
 
   displayList() {
