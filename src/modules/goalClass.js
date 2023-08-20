@@ -1,8 +1,7 @@
-import './style.css';
-import dotsImage from './img/dots.png';
-import syncImage from './img/synchronize.png';
-import enterImage from './img/enter.png';
-import deleteImage from './img/delete.png';
+import dotsImage from '../img/dots.png';
+import syncImage from '../img/synchronize.png';
+import enterImage from '../img/enter.png';
+import deleteImage from '../img/delete.png';
 
 const list = [];
 
@@ -15,7 +14,6 @@ class Goals {
     const newItem = { description, completed, index };
     this.items.push(newItem);
     this.updateLocalStorage();
-    this.displayList();
   }
 
   deleteTask(index) {
@@ -25,11 +23,6 @@ class Goals {
       this.items[i].index = (parseInt(this.items[i].index, 10) - 1).toString();
     }
     this.updateLocalStorage();
-    this.displayList();
-  }
-
-  updateLocalStorage() {
-    localStorage.setItem('list', JSON.stringify(this.items));
   }
 
   displayList() {
@@ -58,7 +51,11 @@ class Goals {
       $delete.alt = 'trash image';
       document.querySelector('.sync').src = syncImage;
       document.querySelector('.enter').src = enterImage;
-
+      if (item.completed) {
+        $task.classList.add('done');
+      } else {
+        $task.classList.remove('done');
+      }
       $cont.appendChild($checkbox);
       $cont.appendChild($task);
       $cont.appendChild($dots);
@@ -66,6 +63,10 @@ class Goals {
       $list.appendChild($cont);
     });
   }
-}
 
+  updateLocalStorage() {
+    localStorage.setItem('list', JSON.stringify(this.items));
+    this.displayList();
+  }
+}
 export default Goals;

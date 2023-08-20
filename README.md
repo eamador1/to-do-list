@@ -20,7 +20,7 @@
 
 # 📖 TO DO LIST <a name="about-project"></a>
 
-In this project, I built a simple HTML list of To Do tasks. The list was styled according to the specifications provided. This simple web page is built using webpack and served by a webpack dev server. The task of adding, deleteting and editing has been added to the project in this section.
+In this project, I built a simple HTML list of To Do tasks. The list was styled according to the specifications provided. This simple web page is built using webpack and served by a webpack dev server. The task of adding, deleteting and editing has been added to the project and add some functionality to the application to make it interactive. The user will be able to mark task completion by selecting the corresponding checkbox (or undo it by unchecking the checkbox). The updated tasks list will be stored in local storage.
 
 ## 🛠 Built With <a name="built-with"></a>
 
